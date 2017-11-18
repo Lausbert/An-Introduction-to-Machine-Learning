@@ -1,0 +1,35 @@
+\documentclass[12pt]{standalone}
+\usepackage{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz} 
+\usetikzlibrary{calc,arrows.meta} 
+
+\def\maßstab{2mnist}
+
+\tikzset{ 
+   symbole/.style={very thick}, 
+   symno/.style={inner sep=0pt}, 
+   edge/.style={thick, ->}
+   }
+  
+% Zelle
+\newcommand\T{\begin{tikzpicture}
+	\draw[symbole](\maßstab*0,\maßstab*0)circle(\maßstab*0.6);
+\end{tikzpicture}}
+
+\begin{document} 
+\trimbox{0cm 0cm 0cm 0cm}{
+   \begin{tikzpicture}
+   		 \coordinate (x) at (\maßstab*0,\maßstab*0);
+   		 \coordinate (b) at (\maßstab*3,\maßstab*0);
+   		 \coordinate (y) at (\maßstab*6,\maßstab*0);
+   		 \node[symno](X) at (x){\T};
+   		 \node[symno](B) at (b){\T};
+   		 \node[symno](Y) at (y){\T};
+         \node[symno] at (x){$x$};
+         \node[symno] at (b){$+b$};
+         \node[symno] at (y){$y$};
+         \draw[edge] (X) -- node [above] {$\cdot a$} (B);
+         \draw[edge] (B) -- node [above] {$\cdot 1$} (Y);
+   \end{tikzpicture}}
+\end{document} 
