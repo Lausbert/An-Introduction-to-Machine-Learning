@@ -1,0 +1,13 @@
+\documentclass[12pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{graphicx}
+
+\begin{document} 
+   \begin{tikzpicture}[font=\sffamily]
+		\node[inner sep=0pt] (fig) at (0,0) {\includegraphics[]{plot3.png}};
+		\node[blue, align = left] at (14,3) {\huge{search for a} \\ \huge{correlation between} \\ \huge{input and output}};
+		\node[red, align = left] at (13.3,-3) {\huge{optimize model} \\ \huge{parameters to} \\ \huge{minimize cost} \\ \huge{function}};
+   \end{tikzpicture}
+\end{document} 
